@@ -3,6 +3,7 @@ import 'package:flutter_demo/demo/flutter_layout_page.dart';
 import 'package:flutter_demo/demo/gesture_page.dart';
 import 'package:flutter_demo/demo/launch_page.dart';
 import 'package:flutter_demo/demo/less_group_page.dart';
+import 'package:flutter_demo/demo/life_circle_page.dart';
 import 'package:flutter_demo/demo/plugin_use.dart';
 import 'package:flutter_demo/demo/res_page.dart';
 import 'package:flutter_demo/demo/stateful_group_page.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         "gesture": (BuildContext context) => GesturePage(),
         "res": (BuildContext context) => ResPage(),
         "launch": (BuildContext context) => LaunchPage(),
+        "circle": (BuildContext context) => LifeCirclePage(),
       },
     );
   }
@@ -64,6 +66,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
           _item("检测手势及点击处理", GesturePage(), "gesture"),
           _item("Flutter导入使用资源文件", ResPage(), "res"),
           _item("打开第三方应用", LaunchPage(), "launch"),
+          _item("页面声明周期", LifeCirclePage(), "circle"),
         ],
       ),
     );
