@@ -23,6 +23,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        // fontFamily: "Montserrat", // 全局更换字体
         brightness: _brightness,
         primarySwatch: Colors.blue,
       ),
@@ -42,7 +43,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
                   }
                 });
               },
-              child: Text("切换主题"),
+              child: Text("切换主题ABC", style: TextStyle(fontFamily: "Montserrat"),), // 局部更换字体
             ),
             RouteNavigator(),
           ],
