@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/demo/app_lifecircle_page.dart';
 import 'package:flutter_demo/demo/flutter_layout_page.dart';
 import 'package:flutter_demo/demo/gesture_page.dart';
 import 'package:flutter_demo/demo/launch_page.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         "res": (BuildContext context) => ResPage(),
         "launch": (BuildContext context) => LaunchPage(),
         "circle": (BuildContext context) => LifeCirclePage(),
+        "appCircle": (BuildContext context) => AppLifeCirclePage(),
       },
     );
   }
@@ -67,6 +69,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
           _item("Flutter导入使用资源文件", ResPage(), "res"),
           _item("打开第三方应用", LaunchPage(), "launch"),
           _item("页面声明周期", LifeCirclePage(), "circle"),
+          _item("APP声明周期", AppLifeCirclePage(), "appCircle"),
         ],
       ),
     );
