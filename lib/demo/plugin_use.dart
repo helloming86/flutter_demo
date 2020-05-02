@@ -1,20 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/demo/plugin_use.dart';
+import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 
-void main() => runApp(PluginUse());
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class PluginUse extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: "如何使用Flutter插件和包",
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo'),
+      home: MyHomePage(title: '如何使用Flutter插件和包'),
     );
   }
+
 }
 
 class MyHomePage extends StatefulWidget {
@@ -47,6 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
+              style: TextStyle(
+                color: ColorUtil.color('#889900')
+              ),
             ),
             Text(
               '$_counter',
