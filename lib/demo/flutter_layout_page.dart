@@ -10,7 +10,6 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = TextStyle(fontSize: 20);
     return MaterialApp(
         title: "Flutter布局开发",
         theme: ThemeData(
@@ -19,6 +18,12 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
         home: Scaffold(
           appBar: AppBar(
             title: Text("Flutter布局开发"),
+            leading: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(Icons.arrow_back),
+            ),
           ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _currentIndex,

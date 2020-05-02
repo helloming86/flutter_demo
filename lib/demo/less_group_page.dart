@@ -1,19 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 
 class LessGroupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextStyle textStyle = TextStyle(fontSize: 20);
     return MaterialApp(
-        title: "StateLess Widget 与 基础组件",
+        title: "StateLessWidget与基础组件",
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
           appBar: AppBar(
             title: Text("StateLess Widget 与 基础组件"),
+            leading: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(Icons.arrow_back),
+            ),
           ),
           body: Container(
             decoration: BoxDecoration(color: Colors.white),

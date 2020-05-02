@@ -1,16 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class StatefulGroup extends StatefulWidget {
+class StatefulGroupPage extends StatefulWidget {
   @override
-  _StatefulGroupState createState() => _StatefulGroupState();
+  _StatefulGroupPageState createState() => _StatefulGroupPageState();
 }
 
-class _StatefulGroupState extends State<StatefulGroup> {
+class _StatefulGroupPageState extends State<StatefulGroupPage> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = TextStyle(fontSize: 20);
     return MaterialApp(
         title: "StatefulWidget与基础组件",
         theme: ThemeData(
@@ -19,6 +18,12 @@ class _StatefulGroupState extends State<StatefulGroup> {
         home: Scaffold(
           appBar: AppBar(
             title: Text("StatefulWidget与基础组件"),
+            leading: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(Icons.arrow_back),
+            ),
           ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _currentIndex,

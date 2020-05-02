@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/demo/flutter_layout_page.dart';
+import 'package:flutter_demo/demo/less_group_page.dart';
+import 'package:flutter_demo/demo/plugin_use.dart';
+import 'package:flutter_demo/demo/stateful_group_page.dart';
 
-void main() => runApp(FlutterLayoutPage());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -12,54 +15,63 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("路由与导航"),
+        ),
+        body: RouteNavigator(),
+      ),
+      routes: <String, WidgetBuilder>{
+        "less": (BuildContext context) => LessGroupPage(),
+        "ful": (BuildContext context) => StatefulGroupPage(),
+        "plugin": (BuildContext context) => PluginUsePage(),
+        "layout": (BuildContext context) => FlutterLayoutPage(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class RouteNavigator extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _RouteNavigatorState createState() => _RouteNavigatorState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _RouteNavigatorState extends State<RouteNavigator> {
+  bool byName = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+    return Container(
+      child: Column(
+        children: <Widget>[
+          SwitchListTile(
+            title: Text("${byName?'':'不'}通过路由跳转"),
+              value: byName,
+              onChanged: (value) {
+                setState(() {
+                  byName = value;
+                });
+              }),
+          _item("StatefulWidget与基础组件", StatefulGroupPage(), "ful"),
+          _item("StateLessWidget与基础组件", LessGroupPage(), "less"),
+          _item("Flutter布局开发", FlutterLayoutPage(), "layout"),
+          _item("如何使用Flutter插件和包", PluginUsePage(), "plugin"),
+        ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
+    );
+  }
+
+  _item(String title, page, String routeName) {
+    return Container(
+      child: RaisedButton(
+        onPressed: () {
+          if(byName){
+            Navigator.pushNamed(context, routeName);
+          } else {
+             Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+          }
+        },
+        child: Text(title),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
