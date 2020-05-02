@@ -9,7 +9,60 @@ import 'package:flutter_demo/demo/plugin_use.dart';
 import 'package:flutter_demo/demo/res_page.dart';
 import 'package:flutter_demo/demo/stateful_group_page.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(DynamicTheme());
+
+class DynamicTheme extends StatefulWidget {
+  @override
+  _DynamicThemeState createState() => _DynamicThemeState();
+}
+
+class _DynamicThemeState extends State<DynamicTheme> {
+  Brightness _brightness = Brightness.light;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        brightness: _brightness,
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("路由与导航"),
+        ),
+        body: Column(
+          children: <Widget>[
+            RaisedButton(
+              onPressed: () {
+                setState(() {
+                  if(_brightness==Brightness.dark) {
+                    _brightness = Brightness.light;
+                  } else {
+                    _brightness = Brightness.dark;
+                  }
+                });
+              },
+              child: Text("切换主题"),
+            ),
+            RouteNavigator(),
+          ],
+        ),
+      ),
+      routes: <String, WidgetBuilder>{
+        "less": (BuildContext context) => LessGroupPage(),
+        "ful": (BuildContext context) => StatefulGroupPage(),
+        "plugin": (BuildContext context) => PluginUsePage(),
+        "layout": (BuildContext context) => FlutterLayoutPage(),
+        "gesture": (BuildContext context) => GesturePage(),
+        "res": (BuildContext context) => ResPage(),
+        "launch": (BuildContext context) => LaunchPage(),
+        "circle": (BuildContext context) => LifeCirclePage(),
+        "appCircle": (BuildContext context) => AppLifeCirclePage(),
+      },
+    );
+  }
+
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
