@@ -5,6 +5,7 @@ import 'package:flutter_demo/demo/gesture_page.dart';
 import 'package:flutter_demo/demo/launch_page.dart';
 import 'package:flutter_demo/demo/less_group_page.dart';
 import 'package:flutter_demo/demo/life_circle_page.dart';
+import 'package:flutter_demo/demo/photo_app_page.dart';
 import 'package:flutter_demo/demo/plugin_use.dart';
 import 'package:flutter_demo/demo/res_page.dart';
 import 'package:flutter_demo/demo/stateful_group_page.dart';
@@ -90,6 +91,7 @@ class MyApp extends StatelessWidget {
         "launch": (BuildContext context) => LaunchPage(),
         "circle": (BuildContext context) => LifeCirclePage(),
         "appCircle": (BuildContext context) => AppLifeCirclePage(),
+        "photoApp": (BuildContext context) => PhotoAppPage(),
       },
     );
   }
@@ -124,6 +126,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
           _item("打开第三方应用", LaunchPage(), "launch"),
           _item("页面声明周期", LifeCirclePage(), "circle"),
           _item("APP声明周期", AppLifeCirclePage(), "appCircle"),
+          _item("拍照APP", PhotoAppPage(), "photoApp"),
         ],
       ),
     );
