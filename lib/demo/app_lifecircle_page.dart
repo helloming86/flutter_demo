@@ -17,10 +17,12 @@ class _AppLifeCircleState extends State<AppLifeCirclePage> with WidgetsBindingOb
   Widget build(BuildContext context) {
     print("----build----");
     return Scaffold(
+      // 顶部标题栏
       appBar: AppBar(
         title: Text("应用生命周期"),
         leading: BackButton(),
       ),
+      // 主体
       body: Container(
         child: Text("应用生命周期"),
       ),

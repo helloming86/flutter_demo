@@ -25,6 +25,7 @@ class _GesturePageState extends State<GesturePage> {
             child: Icon(Icons.arrow_back),
           ),
         ),
+        // FractionallySizedBox控件会根据现有空间，来调整child的尺寸，
         body: FractionallySizedBox(
           // 百分比布局
           widthFactor: 1,
@@ -57,7 +58,7 @@ class _GesturePageState extends State<GesturePage> {
                 left: moveX,
                 top: moveY,
                 child: GestureDetector(
-                  onPanUpdate: (e) => _doMove(e),
+                  onPanUpdate: (e) => _doMove(e), // 手指在屏幕上移动时触发
                   child: Container(
                     width: 72,
                     height: 72,

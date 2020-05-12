@@ -34,8 +34,8 @@ class LessGroupPage extends StatelessWidget {
                   size: 50,
                   color: Colors.red,
                 ),
-                CloseButton(),
-                BackButton(),
+                CloseButton(), // 关闭按钮
+                BackButton(), // 返回按钮
                 Chip(
                   avatar: Icon(Icons.photo),
                   label: Text("StateLess Widget 与 基础组件"),

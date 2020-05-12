@@ -25,6 +25,7 @@ class _StatefulGroupPageState extends State<StatefulGroupPage> {
               child: Icon(Icons.arrow_back),
             ),
           ),
+          // 底部导航栏实践
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _currentIndex,
             onTap: (index) {
