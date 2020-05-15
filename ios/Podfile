@@ -32,6 +32,11 @@ def parse_KV_file(file, separator='=')
   generated_key_values
 end
 
+# Mac机器本地的cocoapods在master目录下，git init后，关联远程仓库 git remote add origin https://github.com/CocoaPods/Specs
+# /Users/XXX/.cocoapods/repos /Users/XXX/.cocoapods/repos/master
+# 修改cocoapods源 为 GitHub源
+source 'https://github.com/CocoaPods/Specs.git'
+
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
