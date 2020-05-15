@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:transparent_image/transparent_image.dart';
-//import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class ImageUse extends StatefulWidget {
   @override
@@ -47,11 +47,11 @@ class _ImageUseState extends State<ImageUse> {
             placeholder: kTransparentImage,
             image: 'http://www.devio.org/img/avatar.png',
           ), // 内存加载图片 transparent_image 加载placeholder
-//          CachedNetworkImage(
-//            imageUrl: 'https://picsum.photos/250?image=9',
-//            placeholder: (context, url) => CircularProgressIndicator(),
-//            errorWidget: (context, url, error) => Icon(Icons.error),
-//          ), // cached_network_image 缓存网络图片, iOS上会编译出错
+          CachedNetworkImage(
+            imageUrl: 'https://picsum.photos/250?image=9',
+            placeholder: (context, url) => CircularProgressIndicator(),
+            errorWidget: (context, url, error) => Icon(Icons.error),
+          ), // cached_network_image 缓存网络图片, 正确配置本地cocoapods后，在IOS端就可以正确编译了
         ],
       ),
     );
