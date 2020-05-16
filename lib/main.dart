@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/demo/animatedbuilder_page.dart';
+import 'package:flutter_demo/demo/animatedwidget_page.dart';
+import 'package:flutter_demo/demo/animation_page.dart';
 import 'package:flutter_demo/demo/app_lifecircle_page.dart';
 import 'package:flutter_demo/demo/flutter_layout_page.dart';
 import 'package:flutter_demo/demo/gesture_page.dart';
@@ -65,6 +68,9 @@ class _DynamicThemeState extends State<DynamicTheme> {
         "circle": (BuildContext context) => LifeCirclePage(),
         "appCircle": (BuildContext context) => AppLifeCirclePage(),
         "image": (BuildContext context) => ImageUse(),
+        "animation": (BuildContext context) => AnimationPage(),
+        "animated": (BuildContext context) => AnimatedWidgetPage(),
+        "animatedBuilder": (BuildContext context) => AnimatedBuilderPage(),
       },
     );
   }
@@ -105,6 +111,9 @@ class _RouteNavigatorState extends State<RouteNavigator> {
                   _item("APP声明周期", AppLifeCirclePage(), "appCircle"),
                   _item("拍照APP", PhotoAppPage(), "photoApp"),
                   _item("图片的使用", ImageUse(), "image"),
+                  _item("Flutter动画-使用监听器和setstate渲染重绘", AnimationPage(), "animation"),
+                  _item("Flutter动画-使用AnimatedWidget渲染重绘", AnimatedWidgetPage(), "animated"),
+                  _item("Flutter动画-使用AnimatedBuilder渲染重绘", AnimatedBuilderPage(), "animatedBuilder"),
                 ],
               ),
             ),
