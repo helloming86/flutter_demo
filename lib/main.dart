@@ -5,12 +5,14 @@ import 'package:flutter_demo/demo/animation_page.dart';
 import 'package:flutter_demo/demo/app_lifecircle_page.dart';
 import 'package:flutter_demo/demo/flutter_layout_page.dart';
 import 'package:flutter_demo/demo/gesture_page.dart';
+import 'package:flutter_demo/demo/hero_page.dart';
 import 'package:flutter_demo/demo/image_use.dart';
 import 'package:flutter_demo/demo/launch_page.dart';
 import 'package:flutter_demo/demo/less_group_page.dart';
 import 'package:flutter_demo/demo/life_circle_page.dart';
 import 'package:flutter_demo/demo/photo_app_page.dart';
 import 'package:flutter_demo/demo/plugin_use.dart';
+import 'package:flutter_demo/demo/radial_hero_page.dart';
 import 'package:flutter_demo/demo/res_page.dart';
 import 'package:flutter_demo/demo/stateful_group_page.dart';
 
@@ -71,6 +73,8 @@ class _DynamicThemeState extends State<DynamicTheme> {
         "animation": (BuildContext context) => AnimationPage(),
         "animated": (BuildContext context) => AnimatedWidgetPage(),
         "animatedBuilder": (BuildContext context) => AnimatedBuilderPage(),
+        "hero": (BuildContext context) => HeroPage(),
+        "radialHero": (BuildContext context) => RadialHeroPage(),
       },
     );
   }
@@ -113,7 +117,9 @@ class _RouteNavigatorState extends State<RouteNavigator> {
                   _item("图片的使用", ImageUse(), "image"),
                   _item("Flutter动画-使用监听器和setstate渲染重绘", AnimationPage(), "animation"),
                   _item("Flutter动画-使用AnimatedWidget渲染重绘", AnimatedWidgetPage(), "animated"),
-                  _item("Flutter动画-使用AnimatedBuilder渲染重绘", AnimatedBuilderPage(), "animatedBuilder"),
+                  _item("Flutter动画-使用AnimatedBuilder渲染重绘(推荐)", AnimatedBuilderPage(), "animatedBuilder"),
+                  _item("Hero动画-标准动画", HeroPage(), "hero"),
+                  _item("Hero动画-径向动画", RadialHeroPage(), "radialHero"),
                 ],
               ),
             ),
