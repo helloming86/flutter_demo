@@ -16,6 +16,7 @@ import 'package:flutter_demo/demo/photo_app_page.dart';
 import 'package:flutter_demo/demo/plugin_use.dart';
 import 'package:flutter_demo/demo/radial_hero_page.dart';
 import 'package:flutter_demo/demo/res_page.dart';
+import 'package:flutter_demo/demo/shared_page.dart';
 import 'package:flutter_demo/demo/stateful_group_page.dart';
 
 void main() => runApp(DynamicTheme());
@@ -79,6 +80,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
         "radialHero": (BuildContext context) => RadialHeroPage(),
         "httpUse": (BuildContext context) => HttpPage(),
         "futureUse": (BuildContext context) => FuturePage(),
+        "shared": (BuildContext context) => SharedPage(),
       },
     );
   }
@@ -126,6 +128,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
                   _item("Hero动画-径向动画", RadialHeroPage(), "radialHero"),
                   _item("Http网络操作", HttpPage(), "httpUse"),
                   _item("Flutter异步操作", FuturePage(), "futureUse"),
+                  _item("shared_preferences实现本地存储", SharedPage(), "shared"),
                 ],
               ),
             ),
