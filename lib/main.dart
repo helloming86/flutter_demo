@@ -6,6 +6,7 @@ import 'package:flutter_demo/demo/app_lifecircle_page.dart';
 import 'package:flutter_demo/demo/flutter_layout_page.dart';
 import 'package:flutter_demo/demo/gesture_page.dart';
 import 'package:flutter_demo/demo/hero_page.dart';
+import 'package:flutter_demo/demo/http_page.dart';
 import 'package:flutter_demo/demo/image_use.dart';
 import 'package:flutter_demo/demo/launch_page.dart';
 import 'package:flutter_demo/demo/less_group_page.dart';
@@ -75,6 +76,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
         "animatedBuilder": (BuildContext context) => AnimatedBuilderPage(),
         "hero": (BuildContext context) => HeroPage(),
         "radialHero": (BuildContext context) => RadialHeroPage(),
+        "httpUse": (BuildContext context) => HttpPage(),
       },
     );
   }
@@ -120,6 +122,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
                   _item("Flutter动画-使用AnimatedBuilder渲染重绘(推荐)", AnimatedBuilderPage(), "animatedBuilder"),
                   _item("Hero动画-标准动画", HeroPage(), "hero"),
                   _item("Hero动画-径向动画", RadialHeroPage(), "radialHero"),
+                  _item("Http网络操作", HttpPage(), "httpUse"),
                 ],
               ),
             ),
