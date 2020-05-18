@@ -6,15 +6,19 @@ import 'package:flutter_demo/demo/app_lifecircle_page.dart';
 import 'package:flutter_demo/demo/flutter_layout_page.dart';
 import 'package:flutter_demo/demo/future_page.dart';
 import 'package:flutter_demo/demo/gesture_page.dart';
+import 'package:flutter_demo/demo/grid_page.dart';
 import 'package:flutter_demo/demo/hero_page.dart';
 import 'package:flutter_demo/demo/http_page.dart';
 import 'package:flutter_demo/demo/image_use.dart';
 import 'package:flutter_demo/demo/launch_page.dart';
 import 'package:flutter_demo/demo/less_group_page.dart';
 import 'package:flutter_demo/demo/life_circle_page.dart';
+import 'package:flutter_demo/demo/list_page.dart';
+import 'package:flutter_demo/demo/list_tile_page.dart';
 import 'package:flutter_demo/demo/photo_app_page.dart';
 import 'package:flutter_demo/demo/plugin_use.dart';
 import 'package:flutter_demo/demo/radial_hero_page.dart';
+import 'package:flutter_demo/demo/refresh_page.dart';
 import 'package:flutter_demo/demo/res_page.dart';
 import 'package:flutter_demo/demo/shared_page.dart';
 import 'package:flutter_demo/demo/stateful_group_page.dart';
@@ -81,6 +85,10 @@ class _DynamicThemeState extends State<DynamicTheme> {
         "httpUse": (BuildContext context) => HttpPage(),
         "futureUse": (BuildContext context) => FuturePage(),
         "shared": (BuildContext context) => SharedPage(),
+        "listView": (BuildContext context) => ListPage(),
+        "listTile": (BuildContext context) => ListTilePage(),
+        "gridView": (BuildContext context) => GridPage(),
+        "refresh": (BuildContext context) => RefreshPage(),
       },
     );
   }
@@ -129,6 +137,10 @@ class _RouteNavigatorState extends State<RouteNavigator> {
                   _item("Http网络操作", HttpPage(), "httpUse"),
                   _item("Flutter异步操作", FuturePage(), "futureUse"),
                   _item("shared_preferences实现本地存储", SharedPage(), "shared"),
+                  _item("ListView滚动列表", ListPage(), "listView"),
+                  _item("ExpansionTile折叠滚动列表", ListTilePage(), "listTile"),
+                  _item("GridView网格滚动列表", GridPage(), "gridView"),
+                  _item("下拉刷新及上拉加载更多", RefreshPage(), "refresh"),
                 ],
               ),
             ),
